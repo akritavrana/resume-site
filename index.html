@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chinta Jaya Naga Sri Harsha | Resume</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 30px;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    h1 {
+      margin-bottom: 0;
+    }
+    h2 {
+      color: #004080;
+    }
+    .section {
+      margin-bottom: 20px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .buttons, .selector {
+      text-align: right;
+      margin-top: 20px;
+    }
+    .buttons button, .selector select {
+      padding: 10px 15px;
+      margin-left: 10px;
+      background-color: #004080;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .buttons button:hover, .selector select:hover {
+      background-color: #003366;
+    }
+    .selector select {
+      background: white;
+      color: #004080;
+      border: 1px solid #004080;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="resume">
+    <header>
+      <h1 id="name">Chinta Jaya Naga Sri Harsha</h1>
+      <p id="contact">Email: harshach168@gmail.com | Phone: 9704396688</p>
+    </header>
+
+    <div class="selector">
+      <label for="domainSelect">Select Resume Domain: </label>
+      <select id="domainSelect" onchange="updateResumeDomain(this.value)">
+        <option value="finance">Finance</option>
+        <option value="product">Product Management</option>
+        <option value="analytics">Analytics</option>
+        <option value="operations">Operations</option>
+      </select>
+    </div>
+
+    <div class="section">
+      <h2>Profile Summary</h2>
+      <p id="summary"></p>
+    </div>
+
+    <div class="section">
+      <h2>Education</h2>
+      <ul id="education"></ul>
+    </div>
+
+    <div class="section">
+      <h2>Professional Experience</h2>
+      <ul id="experience"></ul>
+    </div>
+
+    <div class="section">
+      <h2>Projects & Competitions</h2>
+      <ul id="projects"></ul>
+    </div>
+
+    <div class="section">
+      <h2>Skills</h2>
+      <p id="skills"></p>
+    </div>
+
+    <div class="section">
+      <h2>Achievements</h2>
+      <ul id="achievements"></ul>
+    </div>
+
+    <div class="buttons">
+      <button onclick="window.print()">Download as PDF</button>
+    </div>
+  </div>
+
+  <script>
+    function updateResume(data, domain) {
+      const d = data[domain];
+      document.getElementById("summary").textContent = d.summary;
+      document.getElementById("education").innerHTML = d.education.map(e => `<li>${e}</li>`).join('');
+      document.getElementById("experience").innerHTML = d.experience.map(e => `<li>${e}</li>`).join('');
+      document.getElementById("projects").innerHTML = d.projects.map(p => `<li>${p}</li>`).join('');
+      document.getElementById("skills").textContent = d.skills;
+      document.getElementById("achievements").innerHTML = d.achievements.map(a => `<li>${a}</li>`).join('');
+    }
+
+    let allData = {};
+    function loadDataAndUpdate(domain = 'finance') {
+      fetch('resumeData.json')
+        .then(res => res.json())
+        .then(data => {
+          allData = data;
+          updateResume(allData, domain);
+        });
+    }
+
+    function updateResumeDomain(domain) {
+      updateResume(allData, domain);
+    }
+
+    loadDataAndUpdate();
+  </script>
+</body>
+</html>
