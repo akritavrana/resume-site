@@ -1,0 +1,34 @@
+{
+  "finance": {
+    "summary": "Finance enthusiast with MBA from IIM Udaipur...",
+    "education": ["IIM Udaipur - MBA (Finance), GPA 3.46", "NIT Calicut - B.Tech (Mechanical), CGPA 7.89"],
+    "experience": ["Capgemini - Consultant: KPI achievement", "Bajaj Auto - Intern", "Decimal Point - $1M savings"],
+    "projects": ["Bandhan Bank Valuation", "Air India Digital Strategy"],
+    "skills": "Financial Modeling, Excel, Python",
+    "achievements": ["Top 5% MBA batch", "IIT-JEE Top 2%", "₹20,000 scholarship award"]
+  },
+  "product": {
+    "summary": "Product-driven MBA with a passion for UX and roadmap strategy...",
+    "education": ["IIM Udaipur - MBA (Product)", "NIT Calicut - B.Tech"],
+    "experience": ["Capgemini - Feature owner"],
+    "projects": ["Redesigned app UX for user conversion"],
+    "skills": "Agile, JIRA, Figma",
+    "achievements": ["MVP launched under budget"]
+  },
+  "analytics": {
+    "summary": "Data-driven professional experienced in business analytics...",
+    "education": ["IIM Udaipur - MBA (Analytics)", "NIT Calicut - B.Tech"],
+    "experience": ["Decimal Point - Predictive modeling", "Capgemini - Reporting automation"],
+    "projects": ["Retail churn prediction"],
+    "skills": "SQL, Python, Tableau",
+    "achievements": ["100% hike for automation impact"]
+  },
+  "operations": {
+    "summary": "Operations-focused MBA with expertise in dealer performance and process optimization...",
+    "education": ["IIM Udaipur - MBA (Operations)", "NIT Calicut - B.Tech"],
+    "experience": ["Bajaj Auto - Dealer optimization", "Capgemini - Workforce management"],
+    "projects": ["Dealer automation system"],
+    "skills": "Excel, Process Mapping, RPA",
+    "achievements": ["Saved 2 hours per ASM per eval"]
+  }
+}
